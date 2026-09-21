@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f3ed">
+    <title>Spirograph — 円が描く、幾何学のかたち</title>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/p5@2.3.3/lib/p5.min.js"></script>
+    <script defer src="spirograph.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <a class="wordmark" href="index.html">Spirograph<span> / p5.js</span></a>
+        <span class="eyebrow">円が描く、幾何学のかたち</span>
+      </header>
+
+      <div class="workspace">
+        <section class="controls" aria-labelledby="controls-title">
+          <p class="eyebrow">EXPLORE THE CURVE</p>
+          <h1 id="controls-title">小さな変化から、<br>新しい模様を。</h1>
+          <p class="intro">円の内側で、もうひとつの円を転がす。<br>3つの数値で、ペンの軌跡が変わります。</p>
+
+          <form id="parameters">
+            <div class="parameter">
+              <div class="parameter-heading">
+                <label for="R">固定円の半径 <span>R</span></label>
+                <input id="R" name="R" type="number" min="2" max="300" step="1" value="180" required aria-describedby="R-help input-error">
+              </div>
+              <input id="R-range" data-parameter="R" type="range" min="2" max="300" step="1" value="180" aria-label="固定円の半径 R のスライダー">
+              <p id="R-help" class="hint">外側の、動かない円の大きさ</p>
+            </div>
+
+            <div class="parameter">
+              <div class="parameter-heading">
+                <label for="r">回転円の半径 <span>r</span></label>
+                <input id="r" name="r" type="number" min="1" max="179" step="1" value="70" required aria-describedby="r-help input-error">
+              </div>
+              <input id="r-range" data-parameter="r" type="range" min="1" max="179" step="1" value="70" aria-label="回転円の半径 r のスライダー">
+              <p id="r-help" class="hint">内側を転がる円の大きさ（r &lt; R）</p>
+            </div>
+
+            <div class="parameter">
+              <div class="parameter-heading">
+                <label for="d">ペンの位置 <span>d</span></label>
+                <input id="d" name="d" type="number" min="0" max="300" step="1" value="100" required aria-describedby="d-help input-error">
+              </div>
+              <input id="d-range" data-parameter="d" type="range" min="0" max="300" step="1" value="100" aria-label="ペンの位置 d のスライダー">
+              <p id="d-help" class="hint">回転円の中心からペンまでの距離</p>
+            </div>
+
+            <p id="input-error" class="error" role="status"></p>
+            <button type="reset">初期値に戻す <span aria-hidden="true">↺</span></button>
+          </form>
+          <p class="tip">数値を入力するか、スライダーを動かしてみてください。図形はすぐに描き変わります。</p>
+        </section>
+
+        <figure class="drawing">
+          <div class="drawing-header"><span class="eyebrow">THE DRAWING</span><span class="live-label">LIVE PREVIEW</span></div>
+          <div id="canvas-container"></div>
+          <p id="load-status" class="load-status" role="status">描画の準備中…</p>
+          <noscript><p class="error">描画するには、ブラウザのJavaScriptを有効にしてください。</p></noscript>
+          <figcaption><span>円の運動がつくる、ひと続きの線。</span><span id="curve-info"></span></figcaption>
+        </figure>
+      </div>
+      <footer>SPIROGRAPH STUDY <span>数値は整数で指定できます。図形は画面に収まる大きさで表示します。</span></footer>
+    </main>
+  </body>
+</html>
