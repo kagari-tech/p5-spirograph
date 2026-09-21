@@ -4,7 +4,7 @@
 
 **デモ: https://kagari-tech.github.io/p5-spirograph/**
 
-![Rが180、rが70、dが100のスピログラフ](ogp.png)
+![Rが180、rが70、dが100のスピログラフ](sample.png)
 
 ## 使い方
 
@@ -23,7 +23,8 @@
 | `index.html` | 画面の構造と、入力欄の制約（`min` / `max` / `step`） |
 | `index.css` | 配色とレイアウト |
 | `spirograph.js` | 曲線の計算、描画、入力値の検証 |
-| `ogp.png` | SNS共有時に表示されるカード画像 |
+| `ogp.png` | SNS共有時に表示されるカード画像（1200×630） |
+| `sample.png` | 記事などに貼るための作例画像（1200×1200） |
 
 ## 生成について
 
