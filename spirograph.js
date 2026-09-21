@@ -47,10 +47,10 @@ function initSpirograph() {
       // Sample both rotations finely, including for small r and coprime radii.
       const steps = 120 * Math.max(turns, (R - r) / divisor);
       const scale = p.width * 0.43 / (R - r + d);
-      p.background("#fcfcf8");
+      p.background("#fffdf9");
       p.translate(p.width / 2, p.height / 2);
       p.noFill();
-      p.stroke("#256b63");
+      p.stroke("#b84d24");
       p.strokeWeight(1.5);
       p.beginShape();
       for (let i = 0; i <= steps; i++) {
